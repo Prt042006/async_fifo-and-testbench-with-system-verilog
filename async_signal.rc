@@ -1,0 +1,64 @@
+Magic 271485
+Revision Verdi_W-2024.09-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 900 503 151 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 0 "" "/home/eic.eb.ac.in/Downloads/vlsisoftware/prashant_vifo/fifo rtl design & verification/async_fifo.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 297.589286
+cursor 49.000000
+marker 0.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 7
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "write"
+activeDirFile "" "/home/eic.eb.ac.in/Downloads/vlsisoftware/prashant_vifo/fifo rtl design & verification/async_fifo.fsdb"
+addSignal -h 15 /top/dut/rst_i
+addSignal -h 15 -holdScope wr_clk_i
+addSignal -h 15 -holdScope wr_en_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope wdata_i[7:0]
+addSignal -h 15 -holdScope full_o
+addSignal -h 15 -holdScope wr_error_o
+addGroup "read"
+addSignal -h 15 /top/dut/rd_clk_i
+addSignal -h 15 -holdScope rd_en_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope rdata_o[7:0]
+addSignal -h 15 -holdScope empty_o
+addSignal -h 15 -holdScope rd_error_o
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+
