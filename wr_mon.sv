@@ -19,6 +19,7 @@ class wr_mon;
 				tx.full  = vif.full_o;
 				tx.wr_error = vif.wr_error_o;
 				fifo_common::mon2cov_wr.put(tx);
+				fifo_common::mon2sbd_wr.put(tx);
 				tx.print("WR_MON");
 			end
 		end

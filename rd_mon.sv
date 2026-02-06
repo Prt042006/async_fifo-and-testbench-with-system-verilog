@@ -19,6 +19,7 @@ class rd_mon;
 				tx.empty  = vif.empty_o;
 				tx.rd_error = vif.rd_error_o;
 				fifo_common::mon2cov_rd.put(tx);
+				fifo_common::mon2sbd_rd.put(tx);
 				tx.print("RD_MON");
 			end
 		end

@@ -25,8 +25,10 @@ class wr_gen;
 				write(fifo_common::wr_count);
 			end
 			"test_concurrent_wr_rd":begin
-				delay=$urandom_range(1,10);
-				write(fifo_common::wr_count, delay);
+				repeat(100)begin
+					delay=$urandom_range(1,10);
+					write(fifo_common::wr_count,delay);
+				end
 			end
 			
 		endcase

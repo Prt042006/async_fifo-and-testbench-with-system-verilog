@@ -13,6 +13,7 @@
 `include "wr_bfm.sv"
 `include "wr_gen.sv"
 `include "wr_agent.sv"
+`include "fifo_sbd.sv"
 `include "fifo_env.sv"
 module top;
 	bit wr_clk_i;
@@ -64,7 +65,14 @@ module top;
 	end
 	//finish logic
 	initial begin
-		#3000;
+		#15000;
+		if(fifo_common::num_matches==0 && fifo_common::num_mismatches!=0)begin
+			$display("test failed::\t matches=%d\ttmismatches=%d",fifo_common::num_matches,fifo_common::num_mismatches);
+		end
+		else begin 
+			$display("test passed::\t matches=%d\ttmismatches=%d",fifo_common::num_matches,fifo_common::num_mismatches);
+		end
+		#10;
 		$finish();
 	end
 

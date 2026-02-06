@@ -21,10 +21,10 @@ class rd_gen;
 			end
 		endcase
 	endtask
-	task read(int count);
+	task read(int count,int delay=0);
 		repeat(count)begin
 			tx=new();
-			assert(tx.randomize()with {rd_en==1;});
+			assert(tx.randomize()with {rd_en==1;rd_delay==delay;});
 			fifo_common::gen2bfm_rd.put(tx);
 			tx.print("RD_GEN");
 		end

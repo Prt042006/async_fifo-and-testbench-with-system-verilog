@@ -29,5 +29,6 @@ class rd_bfm;
 		tx.empty = vif.empty_o;
 		tx.rd_error = vif.rd_error_o;
 		vif.rd_en_i = 0;
+		repeat(tx.rd_delay)@(posedge vif.rd_clk_i);
 	endtask
 endclass

@@ -9,5 +9,8 @@ class fifo_common;
 	static int rd_count=5;        //no. of itreation you want perform in rd_bfm
 	static mailbox mon2cov_wr = new();
 	static mailbox mon2cov_rd = new();
-
+	static mailbox mon2sbd_wr = new();
+	static mailbox mon2sbd_rd = new();
+	static int num_matches;
+	static int num_mismatches;
 endclass

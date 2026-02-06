@@ -15,7 +15,7 @@ class rd_tx;
 	endfunction 
 	constraint rd_delay_c
 	{
-		soft rd__delay ==0;
+		soft rd_delay ==0;
 	}
 endclass 
 
