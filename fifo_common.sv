@@ -3,7 +3,7 @@ class fifo_common;
 	static mailbox gen2bfm_wr=new();
 	static mailbox gen2bfm_rd=new();
 	static semaphore smp = new(1); //for writing and reading ek baad ek (matlab ek bar likha fir baar read kiya and so on)
-	static event e;               // first all write happens then it starts to reading 
+	static event e;               // first all write happens then it starts to reading (used for trigering something)
 	static int bfm_count;
 	static int wr_count=5;        //no. of itreation you want perform in wr_bfm
 	static int rd_count=5;        //no. of itreation you want perform in rd_bfm
