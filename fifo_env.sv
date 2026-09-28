@@ -7,7 +7,7 @@ class fifo_env;
 		fork
 			begin
 				fork                              // for running both agent congurently  
-					wr_agent_i.run();
+					wr_agent_i.run();           //Call the run() task of the wr_agent object stored in wr_agent_i.
 					rd_agent_i.run();
 				join
 			end
