@@ -6,7 +6,7 @@ class wr_agent;
 	task run();
 		$display("\t\t wr_agent run method called");
 		fork                     //fork-join used for parallel working 
-			wr_gen_i.run();
+			wr_gen_i.run();      //Call the run() task of the wr_agent object stored in wr_agent_i.
 			wr_bfm_i.run();
 			wr_mon_i.run();
 			wr_cov_i.run();
