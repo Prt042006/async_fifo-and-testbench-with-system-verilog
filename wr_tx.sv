@@ -3,7 +3,7 @@ class wr_tx;
 	rand bit[7:0] wdata;
 	bit full;
 	bit wr_error;
-	rand int wr_delay;
+	rand int wr_delay;   //The wr_delay field is used to insert a variable number of write-clock cycles between write transactions.
 	function void print(string name="WR_TX");
 		$display("Time=%0t\tcomp=%0s\tWr_en=%0d\tWdata=%0h\tFull=%0d\tWr_erro=%0d",$time,name,wr_en,wdata,full,wr_error);
 //		$display("#################################");
@@ -15,9 +15,9 @@ class wr_tx;
 //		$display("Wr_Error=%0d\t",wr_error);
 //		$display("#################################");
 	endfunction 
-	constraint wr_delay_c         //Constraint blocks consist of conditions or expressions to limit or control the values for a random variable
+	constraint wr_delay_c         //Constraint blocks consist of conditions or expressions to limit or control the values for a random variable.
 	{
-		soft wr_delay==0;
+		soft wr_delay==0;      //Use a delay of 0 by default, unless another constraint specifies a different value.
 	}
 endclass
 
