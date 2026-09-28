@@ -15,7 +15,7 @@ class wr_tx;
 //		$display("Wr_Error=%0d\t",wr_error);
 //		$display("#################################");
 	endfunction 
-	constraint wr_delay_c
+	constraint wr_delay_c         //Constraint blocks consist of conditions or expressions to limit or control the values for a random variable
 	{
 		soft wr_delay==0;
 	}
